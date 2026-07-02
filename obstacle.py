@@ -35,3 +35,18 @@ def read_tfmini(max_time=0.3):
         # Convert the meters
         return dist_cm / 100.0 
     return None
+
+def avg_distance(samples=7, max_wait=0.6):
+    # Initialize list
+    vals = []
+    t0 = time.time()
+    ser.reset_input_buffer()
+    time.sleep(0.01)
+    while len(vals) < samples and (time.time() - t0) < max_wait:
+        r = read_tfmini() # Read sensor measurment
+        if r is None: continue
+        d = r
+        if d == 0.0: d = 12.0 # Reaplace 0 to 12
+        vals.append(d) # save valid value
+    if not vals: return None # Return None if empty
+    return sum(vals) / len(vals) # Calculate and return average
