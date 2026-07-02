@@ -84,3 +84,6 @@ def set_mode(mode_name):
     print(f"No change confirmed in {mode_name}")
     return False
 
+def send_body_velocity(vx, vy, vz, duration):
+    print(f"Velocity vx={vx:.2f} vy={vy:.2f} vz={vz:.2f} for {duration:.2f}s")
+
