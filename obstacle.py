@@ -50,3 +50,11 @@ def avg_distance(samples=7, max_wait=0.6):
         vals.append(d) # save valid value
     if not vals: return None # Return None if empty
     return sum(vals) / len(vals) # Calculate and return average
+
+# Pixhawk
+ 
+connection_string = "udpin:127.0.0.1:14550"
+print("Connecting to Pixhawk...")
+m = mavutil.mavlink_connection(connection_string) # Start connection
+m.wait_heartbeat() # Wait for signal
+print("Heartbeat from System ID", m.target_system, "Component ID", m.target_component)
