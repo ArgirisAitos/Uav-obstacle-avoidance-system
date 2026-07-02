@@ -58,3 +58,29 @@ print("Connecting to Pixhawk...")
 m = mavutil.mavlink_connection(connection_string) # Start connection
 m.wait_heartbeat() # Wait for signal
 print("Heartbeat from System ID", m.target_system, "Component ID", m.target_component)
+
+def set_mode(mode_name):
+    # Convert mode to integer
+    mode_id = m.mode_mapping()[mode_name]
+    # Send mode change
+    m.mav.set_mode_send(
+        m.target_system, # Target drone id
+        mavutil.mavlink.MAV_MODE_FLAG_CUSTOM_MODE_ENABLED, # Enable custom modes
+        mode_id # New flight mode id
+    )
+    print(f"Change mode to {mode_name}...")
+    start = time.time()
+    # Loop to confirm change
+    while time.time() - start < 5:
+    # Wait up to 1 second for a HEARTBEAT message from Pixhawk
+        hb = m.recv_match(type='HEARTBEAT', blocking=True, timeout=1)
+        if hb:
+    # Get HEARTBEAT messages
+            current = mavutil.mode_string_v10(hb)
+    # Check if mode matches
+            if current == mode_name:
+                print(f"Mode : {mode_name}")
+                return True
+    print(f"No change confirmed in {mode_name}")
+    return False
+
