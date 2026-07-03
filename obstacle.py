@@ -118,3 +118,27 @@ def yaw_relative(angle_deg, yaw_rate=30):
         0, 0, 0 # unused
     )
     time.sleep(abs(angle_deg) / yaw_rate + 0.4) # Wait for turn and extra safety time
+
+def init_params():
+    # Setup global flight parameter
+    global TRIGGER_DIST, CLEAR_DIST, YAW_SCAN_ANGLE
+    global FWD_VEL, FWD_DIST, LATERAL_DIST
+    global FWD_TIME, RETREAT_TIME, RESET_TIME, MAX_TRIES
+    global RETREAT_DIST, RESET_DIST
+    global SLOW_FWD_VEL, SLOW_FWD_DIST, SLOW_LATERAL_DIST
+
+    TRIGGER_DIST = 6.0  # Trigger for obstacle
+    CLEAR_DIST   = 9.0  # Clear corridor threshold
+    YAW_SCAN_ANGLE = 35 # Scan angle deg
+
+    FWD_VEL      = 1.0 # Velocity
+    FWD_DIST     = 5.0 # Avoid distance
+    LATERAL_DIST = 3.0 #Paralell move
+
+
+    FWD_TIME     = FWD_DIST / FWD_VEL # Avoidance flight time
+    MAX_TRIES    = 2                  # Max attempts
+    RETREAT_DIST = 3.0 # Final back when gave up
+    RETREAT_TIME = RETREAT_DIST / FWD_VEL # Reatreat time
+    RESET_DIST   = 2.0 # When you try to find a corner again
+    RESET_TIME   = RESET_DIST / FWD_VEL # Duration for new distance
