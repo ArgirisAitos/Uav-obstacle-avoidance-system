@@ -94,4 +94,11 @@ def send_body_velocity(vx, vy, vz, duration):
             0, # time_boot_ms: 0 for instant execution with no delay
             m.target_system, # Target drone id
             m.target_component, # Target componet id
-
+            mavutil.mavlink.MAV_FRAME_BODY_NED, # Movement based on drone nose not compass
+            0b0000111111000111, # Bitmask: enable only velocity
+            0, 0, 0, # Ignored position values
+            vx, vy, vz, # Target velocity
+            0, 0, 0, # Ignored acceleration
+            0, 0 # Ignored Yaw
+        )
+        time.sleep(0.1)
