@@ -86,4 +86,8 @@ def set_mode(mode_name):
 
 def send_body_velocity(vx, vy, vz, duration):
     print(f"Velocity vx={vx:.2f} vy={vy:.2f} vz={vz:.2f} for {duration:.2f}s")
+    # Record start time
+    start = time.time()
+    # Loop until the specifies duration is reached
+    while time.time() - start < duration:
 
