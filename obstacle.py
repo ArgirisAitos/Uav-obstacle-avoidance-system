@@ -90,4 +90,8 @@ def send_body_velocity(vx, vy, vz, duration):
     start = time.time()
     # Loop until the specifies duration is reached
     while time.time() - start < duration:
+        m.mav.set_position_target_local_ned_send(
+            0, # time_boot_ms: 0 for instant execution with no delay
+            m.target_system, # Target drone id
+            m.target_component, # Target componet id
 
