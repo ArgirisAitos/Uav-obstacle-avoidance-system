@@ -102,3 +102,19 @@ def send_body_velocity(vx, vy, vz, duration):
             0, 0 # Ignored Yaw
         )
         time.sleep(0.1)
+        
+def yaw_relative(angle_deg, yaw_rate=30):
+    # If positive number set direction 1 right else negative -1 for left
+    direction = 1 if angle_deg >= 0 else -1
+    m.mav.command_long_send(
+        m.target_system, # Target drone id
+        m.target_component, #Target component id
+        mavutil.mavlink.MAV_CMD_CONDITION_YAW, # Sent Yaw command
+        0, # Command confirmation set to first attempt
+        abs(angle_deg), #Absolute value of degrees
+        yaw_rate, # Angular speed
+        direction,
+        1, # Turn relative to current position
+        0, 0, 0 # unused
+    )
+    time.sleep(abs(angle_deg) / yaw_rate + 0.4) # Wait for turn and extra safety time
