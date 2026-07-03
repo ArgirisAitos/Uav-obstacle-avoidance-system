@@ -142,3 +142,11 @@ def init_params():
     RETREAT_TIME = RETREAT_DIST / FWD_VEL # Reatreat time
     RESET_DIST   = 2.0 # When you try to find a corner again
     RESET_TIME   = RESET_DIST / FWD_VEL # Duration for new distance
+    
+    # SLOW MODE
+    SLOW_FWD_VEL      = FWD_VEL * 0.5 # Reduced velocity
+    SLOW_FWD_DIST     = FWD_DIST * 2.0 # Double avoid distance
+    SLOW_LATERAL_DIST = LATERAL_DIST * 2.0 # Double parallel move
+
+init_params()
+slow_mode = False
