@@ -229,3 +229,8 @@ def check_human(check_time=0.8):
             print(f"SLOW MODE ACTIVE:, FWD_VEL = {FWD_VEL}, FWD_DIST = {FWD_DIST}m, LATERAL_DIST = {LATERAL_DIST}m")
             return # Exit and apply new settings
         time.sleep(0.1)
+
+# SCAN SIDES
+def scan_sides():
+    print("Starting yaw scan for free space")
+    send_body_velocity(0, 0, 0, 0.6)    
