@@ -259,3 +259,9 @@ def scan_sides(scan_angle):
         check_human(check_time=0.6)
     else:
         print("Already in Slow Mode (Human seen)")
+    # Return to center
+    print("SCAN Return to center...")
+    yaw_relative(+scan_angle) # Turn back to center
+    send_body_velocity(0, 0, 0, 0.6)
+    # Return values
+    return d_right, d_left
