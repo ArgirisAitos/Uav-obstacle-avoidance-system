@@ -203,3 +203,29 @@ def yolo_processor():
 # Satrt the backround threads
 threading.Thread(target=camera_reader, daemon=True).start() # Thread 1 for camera
 threading.Thread(target=yolo_processor, daemon=True).start() # Thread 2 for YOLO
+
+def check_human(check_time=0.8):
+    # Global parameter
+    global slow_mode, FWD_VEL, FWD_DIST, LATERAL_DIST
+    global FWD_TIME, RETREAT_TIME, RESET_TIME
+    # Check if it is True
+    if slow_mode:
+        return
+    start = time.time() # Record scan start time
+    # Loop continuously for the given check_time duration
+    while time.time() - start < check_time:
+        if is_human_detected:
+            print("Human detected Enabling SLOW MODE")
+            slow_mode = True
+            # Overwrite base variables
+            FWD_VEL      = SLOW_FWD_VEL
+            FWD_DIST     = SLOW_FWD_DIST
+            LATERAL_DIST = SLOW_LATERAL_DIST
+            FWD_TIME     = FWD_DIST / FWD_VEL # Recalculate forward time for the newly increased distance
+            # Adjust times to keep distances constant
+            RETREAT_TIME = RETREAT_DIST / FWD_VEL
+            RESET_TIME   = RESET_DIST / FWD_VEL
+
+            print(f"SLOW MODE ACTIVE:, FWD_VEL = {FWD_VEL}, FWD_DIST = {FWD_DIST}m, LATERAL_DIST = {LATERAL_DIST}m")
+            return # Exit and apply new settings
+        time.sleep(0.1)
