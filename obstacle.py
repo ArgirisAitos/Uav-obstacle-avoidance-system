@@ -234,3 +234,17 @@ def check_human(check_time=0.8):
 def scan_sides(scan_angle):
     print("Starting yaw scan for free space")
     send_body_velocity(0, 0, 0, 0.6)    
+     # Scan Right
+    print(f"SCAN Yaw +{scan_angle}° (right side)...")
+    # Turn right for scanning
+    yaw_relative(+scan_angle)
+    # Measure distance on the right
+    d_right = avg_distance()
+    print(f"SCAN Right distance {d_right}")
+    # Check for humans if not already in slow mode
+    if not slow_mode:
+        check_human(check_time=0.7)
+    else:
+        print("Already in Slow Mode (Human seen) ")
+
+    send_body_velocity(0, 0, 0, 0.6)
