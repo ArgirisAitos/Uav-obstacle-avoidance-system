@@ -150,3 +150,15 @@ def init_params():
 
 init_params()
 slow_mode = False
+
+# YOLO and CAMERA
+
+STREAM_URL = "tcp://127.0.0.1:8888" # Video stream source address
+MODEL_PATH = "yolov8n.pt" # YOLO detection model file
+YOLO_IMG_SIZE = 384 # Input image resolution
+
+model = YOLO(MODEL_PATH) # Initialize YOLO model for detection
+yolo_lock = threading.Lock() # Lock for thread safe model inference
+frame_lock = threading.Lock() # Lock for protecting shared frame buffer
+latest_raw_frame = None
+is_human_detected = False
