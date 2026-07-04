@@ -231,6 +231,6 @@ def check_human(check_time=0.8):
         time.sleep(0.1)
 
 # SCAN SIDES
-def scan_sides():
+def scan_sides(scan_angle):
     print("Starting yaw scan for free space")
     send_body_velocity(0, 0, 0, 0.6)    
