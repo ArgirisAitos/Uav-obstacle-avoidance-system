@@ -177,3 +177,25 @@ def camera_reader():
             continue
         with frame_lock: # Apply a thread lock to prevent simultaneous read or write access
             latest_raw_frame = frame
+
+# Thread 2: YOLO Processor 
+def yolo_processor():
+    global latest_raw_frame, is_human_detected
+    while True:
+        with frame_lock:
+         # Check if the camera captured a frame yet
+            if latest_raw_frame is None:
+                time.sleep(0.01)
+                continue
+            frame = latest_raw_frame.copy() # Copy to new variable
+        with yolo_lock:
+            results = model.predict(source=frame, imgsz=YOLO_IMG_SIZE, conf=0.4, classes=[0], verbose=False) # Run YOLO to detect humans
+            found = len(results[0].boxes) > 0 # Check if a human is detected in the frame
+            temp_annotated = results[0].plot() # Draw the bounding boxes on the image
+            
+            # sent images in livestreaming
+            livestreaming.update_frame(temp_annotated)
+
+        with frame_lock:
+            is_human_detected = found
+        time.sleep(0.01)
