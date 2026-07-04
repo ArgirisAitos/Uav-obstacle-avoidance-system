@@ -199,3 +199,7 @@ def yolo_processor():
         with frame_lock:
             is_human_detected = found
         time.sleep(0.01)
+
+# Satrt the backround threads
+threading.Thread(target=camera_reader, daemon=True).start() # Thread 1 for camera
+threading.Thread(target=yolo_processor, daemon=True).start() # Thread 2 for YOLO
