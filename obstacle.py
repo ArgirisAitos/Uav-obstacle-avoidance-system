@@ -162,3 +162,18 @@ yolo_lock = threading.Lock() # Lock for thread safe model inference
 frame_lock = threading.Lock() # Lock for protecting shared frame buffer
 latest_raw_frame = None
 is_human_detected = False
+
+# Camera Reader
+def camera_reader():
+    global latest_raw_frame
+    cap = cv2.VideoCapture(STREAM_URL, cv2.CAP_FFMPEG) # Initialize the incoming video stream
+    cap.set(cv2.CAP_PROP_BUFFERSIZE, 1) # Defines the maximum number of frames to be stored in the buffer
+    while True:
+        success, frame = cap.read() # Capture the next video frame and status
+        if not success: # Check if the connection to the camera was lost
+            cap.release() # Free the camera resources
+            time.sleep(0.5)
+            cap = cv2.VideoCapture(STREAM_URL, cv2.CAP_FFMPEG)
+            continue
+        with frame_lock: # Apply a thread lock to prevent simultaneous read or write access
+            latest_raw_frame = frame
