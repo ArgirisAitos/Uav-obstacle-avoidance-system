@@ -281,3 +281,7 @@ def avoid_obstacle():
     send_body_velocity(0, 0, 0, 0.6)
     # check for human
     check_human(check_time=0.7)
+
+    side_tries = 0
+    retreat_attempts = 0
+    failed = False # Flag for retreat
