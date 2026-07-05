@@ -276,4 +276,8 @@ def avoid_obstacle():
     if not set_mode("GUIDED"):
         print("Aborting avoidance.")
         return
-   
+    time.sleep(0.5)
+    # Stop the drone and hover in place
+    send_body_velocity(0, 0, 0, 0.6)
+    # check for human
+    check_human(check_time=0.7)
