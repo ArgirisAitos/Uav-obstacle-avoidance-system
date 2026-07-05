@@ -265,3 +265,15 @@ def scan_sides(scan_angle):
     send_body_velocity(0, 0, 0, 0.6)
     # Return values
     return d_right, d_left
+
+def avoid_obstacle():
+    # Declare the global variables that will be used
+    global slow_mode, MAX_TRIES
+    global FWD_VEL, LATERAL_DIST, FWD_DIST, FWD_TIME
+    global RESET_TIME, RETREAT_TIME
+
+    # Switch flight mode to GUIDED and check if it succeeded
+    if not set_mode("GUIDED"):
+        print("Aborting avoidance.")
+        return
+   
