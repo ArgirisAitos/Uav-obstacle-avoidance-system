@@ -294,3 +294,13 @@ def avoid_obstacle():
             print("No LiDAR reading aborting avoidance.")
             failed = True
             break
+        print(f"Forward distance = {current_dist:.2f} m")
+        # If forward distance exceeds the safety threshold the path is clear
+        if current_dist >= CLEAR_DIST:
+            print("Path already clear.")
+            break
+        # Check if max side attempts reached
+        if side_tries >= MAX_TRIES:
+            print("Reached MAX_SIDE_TRIES, giving up.")
+            failed = True
+            break
