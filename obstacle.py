@@ -333,3 +333,15 @@ def avoid_obstacle():
         # Rotate to chosen direction
         yaw_relative(yaw_angle)
         send_body_velocity(0, 0, 0, 1.2)    
+        # Measure distance to confirm  clear path
+        d_side= avg_distance()
+        print(f"Obstacle distance after rotation: {d_side}m")
+        if d_side is None or d_side < LATERAL_DIST:
+            print(f"Path blocked ({d_side}m) after turn. Aborting.")
+        # Revert turn
+            yaw_relative(-yaw_angle)
+        # Move back if attempts are available
+            if retreat_attempts < MAX_TRIES:
+                send_body_velocity(-FWD_VEL, 0.0, 0.0, RESET_TIME)
+                retreat_attempts += 1
+            continue
