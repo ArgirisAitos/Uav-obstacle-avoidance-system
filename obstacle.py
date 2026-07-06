@@ -308,3 +308,19 @@ def avoid_obstacle():
         scan_angle = YAW_SCAN_ANGLE + retreat_attempts * 5
         # Execute scan on both sides
         d_right, d_left = scan_sides(scan_angle)
+        # Check if no free space is detected on either side
+        if (d_right is None or d_right < CLEAR_DIST) and \
+           (d_left is None or d_left < CLEAR_DIST):
+            print("No free space right/left.")
+        # Retreat if attempts remain
+            if retreat_attempts < MAX_TRIES:
+                print(f"Retreat attempt {retreat_attempts+1}/{MAX_TRIES}")
+        # Move back for more space and wire scan range
+                send_body_velocity(-FWD_VEL, 0.0, 0.0, RESET_TIME)
+                send_body_velocity(0, 0, 0, 0.8)
+        # Increment retreat counter and restart the loop for a new scan
+                retreat_attempts += 1
+                continue
+            else:
+                failed = True # Mark as failed and move back
+                break
