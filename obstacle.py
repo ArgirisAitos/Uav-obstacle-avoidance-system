@@ -324,3 +324,12 @@ def avoid_obstacle():
             else:
                 failed = True # Mark as failed and move back
                 break
+            
+        # Choose clearer side for 90 deg turn
+        yaw_angle = +90 if (d_right or 0) > (d_left or 0) else -90
+        # Display on the terminal the direction and angle it will turn
+        turn_side = "Right" if yaw_angle == 90 else "Left"
+        print(f"Turning {turn_side} ({yaw_angle}°) for avoidance...")
+        # Rotate to chosen direction
+        yaw_relative(yaw_angle)
+        send_body_velocity(0, 0, 0, 1.2)    
