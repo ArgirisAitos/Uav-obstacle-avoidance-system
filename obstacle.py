@@ -345,3 +345,15 @@ def avoid_obstacle():
                 send_body_velocity(-FWD_VEL, 0.0, 0.0, RESET_TIME)
                 retreat_attempts += 1
             continue
+        # Calculate time needed to cover the lateral distance
+        lateral_time = LATERAL_DIST / FWD_VEL
+        print(f"Moving Lateral for {LATERAL_DIST}m (Time: {lateral_time:.2f}s)")
+        send_body_velocity(FWD_VEL, 0, 0, lateral_time)
+        send_body_velocity(0, 0, 0, 1.0)
+        # Face forward again
+        print("Restoring forward heading...")
+        yaw_relative(-yaw_angle)
+        send_body_velocity(0, 0, 0, 0.8)
+        # Measure forward distance drom new position
+        d_forward = avg_distance()
+        print(f"Distance ahead: {d_forward}m")
