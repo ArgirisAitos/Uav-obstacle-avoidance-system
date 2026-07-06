@@ -306,3 +306,5 @@ def avoid_obstacle():
             break
          # Calculate and expand scan angle each attempt
         scan_angle = YAW_SCAN_ANGLE + retreat_attempts * 5
+        # Execute scan on both sides
+        d_right, d_left = scan_sides(scan_angle)
