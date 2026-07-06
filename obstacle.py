@@ -357,3 +357,26 @@ def avoid_obstacle():
         # Measure forward distance drom new position
         d_forward = avg_distance()
         print(f"Distance ahead: {d_forward}m")
+        if d_forward is not None and d_forward >= CLEAR_DIST:
+            print(f"Moving Forward for {FWD_DIST}m (Time: {FWD_TIME:.2f}s)")
+        # Move forward to pass obstacle
+            send_body_velocity(FWD_VEL, 0, 0, FWD_TIME)
+            break
+        # Obstacle still ahead
+        else:
+            print("Blocked after lateral move. Trying again.")
+            side_tries += 1
+            continue
+    # Reatreat due failure to avoid obstacle
+    if failed:
+        print("Could not find safe corridor, retreating.")
+        send_body_velocity(-FWD_VEL, 0.0, 0.0, RETREAT_TIME)
+
+    set_mode("LOITER")
+
+    if slow_mode:
+        print("Resetting to NORMAL SPEED & DISTANCES.")
+        slow_mode = False
+        init_params() 
+
+    time.sleep(1.1)
