@@ -380,3 +380,50 @@ def avoid_obstacle():
         init_params() 
 
     time.sleep(1.1)
+
+# Main
+def run_flight():
+
+    trigger_count = 0 # Initialize counter
+    print("Waiting for motors to be armed...")
+    while True:
+        # Wait up to 1 second for a HEARTBEAT message from Pixhawk
+        hb = m.recv_match(type='HEARTBEAT', blocking=True, timeout=1)
+        if not hb: continue # If no message received try again
+        # Check the bit to see if the drone is ARMED
+        armed = bool(hb.base_mode & mavutil.mavlink.MAV_MODE_FLAG_SAFETY_ARMED)
+        if armed:
+            print("ARMED motors detected. Starting obstacle avoidance system")
+            break
+    while True:
+        # Wait up to 1 second for a HEARTBEAT message from Pixhawk
+        hb = m.recv_match(type='HEARTBEAT', blocking=False)
+        if hb:
+            # Check the bit to see if the drone is ARMED
+            armed = bool(hb.base_mode & mavutil.mavlink.MAV_MODE_FLAG_SAFETY_ARMED)
+            if not armed: # If the drone is not ARMED (DISARMED)
+                print("DISARMED, stopping.")
+                os._exit(0) # stop script
+
+        d = avg_distance() # Get the average distance from the LiDAR sensor
+        if d is not None:
+            print(f"Forward: {d:.2f} m")
+            if d <= TRIGGER_DIST: # If an obstacle is closer than the limit
+                trigger_count += 1 # Increment the counter
+            else: # If the path is clear
+                trigger_count = 0 # Reset the counter to zero
+
+            if trigger_count >= 4: # If the obstacle is confirmed after 4 checks
+                print("Obstacle detected, starting avoidance")
+                avoid_obstacle() # Execute the avoidance meneuver
+                trigger_count = 0 # Reset counter after the maneuver is done
+        else:
+            print("No LiDAR reading")
+        time.sleep(0.2)
+
+if __name__ == "__main__":
+    # Thread Flask 
+    flask_thread = threading.Thread(target=livestreaming.start_server, daemon=True)
+    flask_thread.start()
+    
+    run_flight()
