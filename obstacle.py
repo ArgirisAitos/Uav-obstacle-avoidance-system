@@ -285,3 +285,12 @@ def avoid_obstacle():
     side_tries = 0
     retreat_attempts = 0
     failed = False # Flag for retreat
+    
+    while True:
+        # Read distance from LiDAR
+        current_dist = avg_distance()
+        # Check from sensor readings
+        if current_dist is None:
+            print("No LiDAR reading aborting avoidance.")
+            failed = True
+            break
