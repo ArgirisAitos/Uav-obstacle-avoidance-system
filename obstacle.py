@@ -304,3 +304,5 @@ def avoid_obstacle():
             print("Reached MAX_SIDE_TRIES, giving up.")
             failed = True
             break
+         # Calculate and expand scan angle each attempt
+        scan_angle = YAW_SCAN_ANGLE + retreat_attempts * 5
