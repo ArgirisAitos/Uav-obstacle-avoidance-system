@@ -14,3 +14,14 @@ TOPIC_BAT = "drone/battery"
 TOPIC_ALT = "drone/alt"
 TOPIC_VERTICAL = "drone/vertical"
 
+# Connect to PIXHAWK 
+connection_string = "udpin:127.0.0.1:14551"
+
+print(f"Connecting to Pixhawk")
+try:
+    m = mavutil.mavlink_connection(connection_string)
+    m.wait_heartbeat()
+    print("Heartbeat OK")
+except Exception as e:
+    print(f"Error connecting to Pixhawk: {e}")
+    exit(1)
