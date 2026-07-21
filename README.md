@@ -32,7 +32,7 @@ This repository presents a semi-autonomous UAV designed to assist the pilot by a
 
 # Software Requirements (Raspberry Pi)
 
-- Raspberry Pi OS (64-bit)
+- Raspberry Pi OS Lite (64-bit)
 - Python 3
 - MAVLink / PyMAVLink (communication with the flight controller)
 - OpenCV
@@ -43,3 +43,14 @@ This repository presents a semi-autonomous UAV designed to assist the pilot by a
 - Node-RED Dashboard
 - Mosquitto MQTT Broker
 - rpicam-vid (Raspberry Pi Camera Streaming)
+
+## Communication Protocols
+
+| Connection | Protocol |
+|------------|----------|
+| Raspberry Pi - Pixhawk | UART + MAVLink |
+| Raspberry Pi - TFmini Plus LiDAR | UART (Serial) |
+| Raspberry Pi Camera V2 - Raspberry Pi | CSI Interface |
+| Camera Stream | TCP  |
+| Telemetry Dashboard | MQTT |
+| Live Video Streaming | HTTP (Flask MJPEG) |
