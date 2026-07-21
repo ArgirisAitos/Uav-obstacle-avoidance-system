@@ -15,3 +15,17 @@ This repository presents a semi-autonomous UAV designed to assist the pilot by a
 - Node-RED dashboard for flight visualization.
 - MAVLink communication between Raspberry Pi and Pixhawk.
 - MQTT communication for telemetry transmission
+
+# Hardware Requirements
+
+- Quadcopter Frame
+- Pixhawk 2.4.8 Flight Controller
+- Raspberry Pi 5
+- Benewake TFmini Plus LiDAR
+- Raspberry Pi Camera V2
+- GPS Module 
+- Motors
+- ESCs
+- Battery
+- RC Transmitter
+- RC Receiver
