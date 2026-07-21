@@ -29,3 +29,17 @@ This repository presents a semi-autonomous UAV designed to assist the pilot by a
 - Battery
 - RC Transmitter
 - RC Receiver
+
+# Software Requirements (Raspberry Pi)
+
+- Raspberry Pi OS (64-bit)
+- Python 3
+- MAVLink / PyMAVLink
+- OpenCV
+- Ultralytics YOLOv8
+- Flask (Live Video Streaming)
+- PySerial (LiDAR Communication)
+- Paho MQTT (Telemetry Transmission)
+- Node-RED Dashboard
+- Mosquitto MQTT Broker
+- rpicam-vid (Raspberry Pi Camera Streaming)
