@@ -34,7 +34,7 @@ This repository presents a semi-autonomous UAV designed to assist the pilot by a
 
 - Raspberry Pi OS (64-bit)
 - Python 3
-- MAVLink / PyMAVLink (communication with the Pixhawk flight controlleer)
+- MAVLink / PyMAVLink (communication with the flight controlleer)
 - OpenCV
 - Ultralytics YOLOv8
 - Flask (Live Video Streaming)
