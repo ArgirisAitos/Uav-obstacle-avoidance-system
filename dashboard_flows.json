@@ -1,0 +1,542 @@
+[
+    {
+        "id": "364a5b925182dc4e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "93ceb39b6c0da9aa",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b06568b5b6010564",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "eaa75635ccf5b068",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "93ceb39b6c0da9aa",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f5f08b67e693b90e",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "",
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ba2e06dfd5a1827f",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "93ceb39b6c0da9aa",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ef377791ccfac232",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "42fcd5760d4039bb",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0677a91a55acdc39",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "09e27f856fbca9d8",
+        "type": "ui_tab",
+        "name": "Drone Telemetry",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3f224b542db2a1b7",
+        "type": "ui_group",
+        "name": "",
+        "tab": "09e27f856fbca9d8",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "09e690f1ccf67144",
+        "type": "ui_group",
+        "name": "",
+        "tab": "09e27f856fbca9d8",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8db0e292279ca58e",
+        "type": "ui_group",
+        "name": "",
+        "tab": "09e27f856fbca9d8",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b7447e61fc2c81b6",
+        "type": "mqtt in",
+        "z": "364a5b925182dc4e",
+        "name": "Battery",
+        "topic": "drone/battery",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "ef377791ccfac232",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "06e62c285d82f003"
+            ]
+        ]
+    },
+    {
+        "id": "7a016ee896f6d5a3",
+        "type": "mqtt in",
+        "z": "364a5b925182dc4e",
+        "name": "Speed",
+        "topic": "drone/speed",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "42fcd5760d4039bb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 320,
+        "wires": [
+            [
+                "64f98058cbf01ace"
+            ]
+        ]
+    },
+    {
+        "id": "600f9b120236da3d",
+        "type": "mqtt in",
+        "z": "364a5b925182dc4e",
+        "name": "GPS",
+        "topic": "drone/gps",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "0677a91a55acdc39",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 530,
+        "y": 480,
+        "wires": [
+            [
+                "d3c700808b4e92ce"
+            ]
+        ]
+    },
+    {
+        "id": "06e62c285d82f003",
+        "type": "ui_gauge",
+        "z": "364a5b925182dc4e",
+        "name": "battery_gauge",
+        "group": "3f224b542db2a1b7",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Battery (V)",
+        "label": "V",
+        "format": "{{value | number:2}}",
+        "min": "13.2",
+        "max": "16.79",
+        "colors": [
+            "#f50000",
+            "#e6e600",
+            "#00ff04"
+        ],
+        "seg1": "14.00",
+        "seg2": "15.20",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "64f98058cbf01ace",
+        "type": "ui_text",
+        "z": "364a5b925182dc4e",
+        "group": "09e690f1ccf67144",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "name": "Ground Speed",
+        "label": "Ground Speed",
+        "format": "{{value | number:2}} m/s",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "24",
+        "color": "#000000",
+        "x": 820,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d3c700808b4e92ce",
+        "type": "function",
+        "z": "364a5b925182dc4e",
+        "name": "function 1",
+        "func": "let lat = msg.payload.lat;\nlet lon = msg.payload.lon;\n\n\nmsg.payload = {\n    name: \"drone\",\n    lat: lat,\n    lon: lon,\n    layer: \"pixhawk\",\n    icon: \"circle\"\n};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "fc40813da696fa38"
+            ]
+        ]
+    },
+    {
+        "id": "fc40813da696fa38",
+        "type": "ui_worldmap",
+        "z": "364a5b925182dc4e",
+        "group": "8db0e292279ca58e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "17",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "600",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "true",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 880,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "541f188ec78a608d",
+        "type": "mqtt in",
+        "z": "364a5b925182dc4e",
+        "name": "Vertical speed",
+        "topic": "drone/vertical",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "42fcd5760d4039bb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 610,
+        "y": 240,
+        "wires": [
+            [
+                "42a44cc669391844"
+            ]
+        ]
+    },
+    {
+        "id": "42a44cc669391844",
+        "type": "ui_text",
+        "z": "364a5b925182dc4e",
+        "group": "09e690f1ccf67144",
+        "order": 2,
+        "width": "6",
+        "height": "6",
+        "name": "Vertical Speed",
+        "label": "Vertical Speed",
+        "format": "{{value | number:2}} m/s",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "24",
+        "color": "#000000",
+        "x": 820,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5856fe0b474568e9",
+        "type": "mqtt in",
+        "z": "364a5b925182dc4e",
+        "name": "Alltitude (m)",
+        "topic": "drone/alt",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "42fcd5760d4039bb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 610,
+        "y": 400,
+        "wires": [
+            [
+                "f12bd2f92fdcabbf"
+            ]
+        ]
+    },
+    {
+        "id": "f12bd2f92fdcabbf",
+        "type": "ui_text",
+        "z": "364a5b925182dc4e",
+        "group": "3f224b542db2a1b7",
+        "order": 2,
+        "width": "6",
+        "height": "6",
+        "name": "Altitude ",
+        "label": "Altitude (m)",
+        "format": "{{value | number:2}} m/s",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "24",
+        "color": "#000000",
+        "x": 800,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "af8d0a5ea5552193",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-web-worldmap": "5.5.4"
+        }
+    }
+]
