@@ -180,4 +180,4 @@ This script:
 - Returns control to the operator after the maneuver.
 
 # Video 
-![UAV Obstacle Avoidance](images/VideoDemo.gif)
+<img src="images/VideoDemo.gif" width="800">
