@@ -147,3 +147,9 @@ rpicam-vid -t 0 \
 <p align="center">
   <img src="images/Εικόνα3.png" width="1050">
 </p>
+
+2. Start the Telemetry Module
+```
+python3 telemetry.py
+```
+This script connects to the Pixhawk through MAVLink, receives telemetry data and publishes them to the MQTT broker.
