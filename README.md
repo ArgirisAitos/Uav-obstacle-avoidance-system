@@ -142,8 +142,6 @@ http://<RaspberryPi-IP>:5000/video
 
 to view the live camera feed with AI detection results.
 
-
-
 ## Running the Project
 
 1. Start the Raspberry Pi Camera Stream
@@ -180,3 +178,6 @@ This script:
 - Starts the Flask live streaming server.
 - Executes autonomous obstacle avoidance.
 - Returns control to the operator after the maneuver.
+
+# Video 
+<video src="images/VideoDemo.mp4" width="600" controls></video>
