@@ -82,6 +82,7 @@ The repository includes a pre-configured `dashboard_flows.json` file for the Nod
 
 1. Start the MQTT broker:
 
+
 ```bash
 sudo systemctl start mosquitto
 ```
@@ -99,11 +100,11 @@ http://localhost:1880
 ```
 
 4. Import the provided `dashboard_flows.json` file:
-`
-`
-`
-`
-Τhe dashboard will be available at:
+<br>
+<br>
+<br>
+
+The dashboard will be available at:
 
 ```
 http://localhost:1880/ui
