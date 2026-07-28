@@ -162,16 +162,16 @@ rpicam-vid -t 0 \
 
 2. Start the Telemetry Module
 
-```
-python3 telemetry.py
-```
+  ```
+  python3 telemetry.py
+  ```
 This script connects to the Pixhawk through MAVLink, receives telemetry data and publishes them to the MQTT broker.
 
 3. Start the Obstacle Avoidance System
 
-``
-python3 obstacle.py
-``
+  ``
+  python3 obstacle.py
+  ``
 
 This script:
 
