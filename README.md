@@ -161,6 +161,7 @@ rpicam-vid -t 0 \
 </p>
 
 2. Start the Telemetry Module
+
 ```
 python3 telemetry.py
 ```
@@ -170,6 +171,7 @@ This script connects to the Pixhawk through MAVLink, receives telemetry data and
 
 ``
 python3 obstacle.py
+
 ``
 This script:
 - Connects to the Pixhawk.
