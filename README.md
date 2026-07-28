@@ -76,15 +76,45 @@ pip install paho-mqtt
 
 ## Telemetry Dashboard
 
-The telemetry module receives flight data from the Pixhawk through the MAVLink protocol and publishes them to an MQTT broker. Node-RED subscribes to these topics and visualizes the UAV status in real time through an interactive dashboard.
+The repository includes a pre-configured `dashboard_flows.json` file for the Node-RED dashboard.
 
-The dashboard displays:
+### Setup
 
-- GPS Position
-- Relative Altitude
-- Ground Speed
-- Vertical Speed
-- Battery Voltage
+1. Start the MQTT broker:
+
+```bash
+sudo systemctl start mosquitto
+```
+
+2. Start Node-RED:
+
+```bash
+node-red
+```
+
+3. Open Node-RED:
+
+```
+http://localhost:1880
+```
+
+4. Import the provided `dashboard_flows.json` file
+
+The dashboard will be available at:
+
+```
+http://localhost:1880/ui
+```
+
+### Dashboard Features
+
+The dashboard subscribes to the telemetry data published by the UAV through MQTT and provides real-time monitoring of:
+
+- Battery voltage
+- Relative altitude
+- Ground speed
+- Vertical speed
+- GPS position
 
 ### MQTT Topics
 
@@ -97,3 +127,5 @@ The dashboard displays:
 <p align="center">
   <img src="images/dashboard.png" width="850">
 </p>
+
+## Running the Project
