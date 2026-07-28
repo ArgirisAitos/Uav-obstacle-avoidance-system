@@ -144,3 +144,6 @@ rpicam-vid -t 0 \
 --intra 15 \
 -o tcp://0.0.0.0:8888
 ```
+<p align="center">
+  <img src="Εικόνα3.png" width="850">
+</p>
