@@ -143,7 +143,7 @@ http://RaspberryPi-IP:5000/video
 to view the live camera feed with AI detection results.
 
 <p align="center">
-  <img src="images/livestreaming.png" width="1050">
+  <img src="images/livestreaming.png" width="900">
 </p>
 
 ## Running the Project
