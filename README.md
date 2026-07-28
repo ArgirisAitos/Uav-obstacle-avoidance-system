@@ -73,3 +73,27 @@ pip install paho-mqtt
 - Mosquitto MQTT Broker
 - Node-RED
 - rpicam-apps
+
+## Telemetry Dashboard
+
+The telemetry module receives flight data from the Pixhawk through the MAVLink protocol and publishes them to an MQTT broker. Node-RED subscribes to these topics and visualizes the UAV status in real time through an interactive dashboard.
+
+The dashboard displays:
+
+- GPS Position
+- Relative Altitude
+- Ground Speed
+- Vertical Speed
+- Battery Voltage
+
+### MQTT Topics
+
+- `drone/gps`
+- `drone/alt`
+- `drone/speed`
+- `drone/vertical`
+- `drone/battery`
+
+<p align="center">
+  <img src="images/dashboard.png" width="850">
+</p>
