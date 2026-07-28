@@ -180,4 +180,4 @@ This script:
 - Returns control to the operator after the maneuver.
 
 # Video 
-<img src="images/VideoDemo.gif" width="600">
+<img src="images/VideoDemo.gif" width="800">
