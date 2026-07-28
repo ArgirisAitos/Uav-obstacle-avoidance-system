@@ -142,6 +142,10 @@ http://RaspberryPi-IP:5000/video
 ``
 to view the live camera feed with AI detection results.
 
+<p align="center">
+  <img src="images/livestreaming.png" width="1050">
+</p>
+
 ## Running the Project
 
 1. Start the Raspberry Pi Camera Stream
@@ -157,7 +161,7 @@ rpicam-vid -t 0 \
 -o tcp://0.0.0.0:8888
 ```
 <p align="center">
-  <img src="images/Εικόνα3.png" width="1050">
+  <img src="images/image1.png" width="1050">
 </p>
 
 2. Start the Telemetry Module
