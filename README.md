@@ -125,7 +125,7 @@ The dashboard subscribes to the telemetry data published by the UAV through MQTT
 - `drone/speed`
 - `drone/vertical`
 - `drone/battery`
-
+<br>
 <p align="center">
   <img src="images/dashboard.png" width="850">
 </p>
