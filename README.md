@@ -99,7 +99,7 @@ node-red
 http://localhost:1880
 ```
 
-4. Import the provided `dashboard_flows.json` file:
+4. Import the provided `dashboard_flows.json` file
 <br>
 <br>
 The dashboard will be available at:
@@ -130,4 +130,17 @@ The dashboard subscribes to the telemetry data published by the UAV through MQTT
   <img src="images/dashboard.png" width="850">
 </p>
 
-## Running the Project
+### Running the Project
+
+1. Start the Raspberry Pi Camera Stream
+
+```
+rpicam-vid -t 0 \
+--width 800 \
+--height 600 \
+--framerate 10 \
+--inline \
+--listen \
+--intra 15 \
+-o tcp://0.0.0.0:8888
+```
