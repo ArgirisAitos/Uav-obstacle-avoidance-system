@@ -5,7 +5,7 @@
 This repository presents a semi-autonomous UAV designed to assist the pilot by automatically avoiding obstacles during flight while maintaining manual control under normal operating conditions. The pilot remains in full control of the UAV throughout the flight, while the onboard companion computer temporarily takes control only when an obstacle is detected within a predefined safety distance to safely perform an avoidance manoeuvre before returning control to the pilot.The system combines a flight controller, a companion computer, a LiDAR sensor for real-time obstacle detection, a camera for real-time image acquisition and artificial intelligence for human detection allowing the UAV to adapt its behaviour and perform safer avoidance manoeuvres. The project also includes a real-time telemetry dashboard and live video streaming. While the UAV is flying, the operator can monitor its status through the dashboard and watch the live camera feed with the AI human detection results in real time.
 
 <p align="center">
-  <img src="images/photo.jpg" width="650">
+  <img src="images/photo.jpg" width="300">
 </p>
 
 # Features
