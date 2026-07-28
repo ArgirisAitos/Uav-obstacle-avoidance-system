@@ -102,8 +102,6 @@ http://localhost:1880
 4. Import the provided `dashboard_flows.json` file:
 <br>
 <br>
-<br>
-
 The dashboard will be available at:
 
 ```
