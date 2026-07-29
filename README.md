@@ -177,9 +177,9 @@ This script connects to the Pixhawk through MAVLink, receives telemetry data and
 
 3. Start the Obstacle Avoidance System
 
-  ``
+  ```
   python3 obstacle.py
-  ``
+  ```
 
 This script:
 
