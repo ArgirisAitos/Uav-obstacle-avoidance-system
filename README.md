@@ -180,6 +180,7 @@ This script connects to the Pixhawk through MAVLink, receives telemetry data and
   ``
   python3 obstacle.py
   ``
+
 This script:
 
 - Connects to the Pixhawk.
